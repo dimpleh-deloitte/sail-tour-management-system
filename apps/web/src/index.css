@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: theme("colors.steel.900");
+}
+
+/* Visual language ported from the legacy prototype's DESIGN_SYSTEM.md —
+   same tokens, reused deliberately (see Phase1 plan §2). */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/85 backdrop-blur-md border border-white/60;
+  }
+
+  .blueprint-bg {
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        rgba(30, 86, 160, 0.03) 19px,
+        rgba(30, 86, 160, 0.03) 20px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 19px,
+        rgba(30, 86, 160, 0.03) 19px,
+        rgba(30, 86, 160, 0.03) 20px
+      );
+  }
+
+  .steel-shimmer {
+    background: linear-gradient(90deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
+    background-size: 200% 100%;
+  }
+}
